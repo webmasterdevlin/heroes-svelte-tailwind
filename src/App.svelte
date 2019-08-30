@@ -2,6 +2,7 @@
   import { quintOut } from "svelte/easing";
   import { crossfade } from "svelte/transition";
   import { flip } from "svelte/animate";
+  import Todo from "./Todo.svelte";
 
   const [send, receive] = crossfade({
     duration: d => Math.sqrt(d * 200),
@@ -57,8 +58,7 @@
 <style>
   .container {
     display: flex;
-    height: 100vh;
-    place-items: center;
+    flex-direction: row;
   }
 
   .board {
@@ -127,7 +127,7 @@
 </style>
 
 <main class="container">
-  <div class="board">
+  <section class="board">
     <input
       placeholder="what needs to be done?"
       on:keydown={e => e.which === 13 && add(e.target)} />
@@ -160,5 +160,6 @@
         </label>
       {/each}
     </div>
-  </div>
+  </section>
+  <Todo />
 </main>
