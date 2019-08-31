@@ -77,9 +77,10 @@
       Loading...
     </div>
   {:else}
-    {#each $villainStore.villains as villain}
+    {#each $villainStore.villains as villain, index}
       <div class="max-w-sm m-5 p-10 rounded overflow-hidden shadow-lg">
         <div class="px-6 py-4">
+          <span class="text-orange-500">#{index + 1}</span>
           <div class="font-bold text-xl mb-2">
             {villain.firstName} {villain.lastName}
           </div>

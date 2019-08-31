@@ -78,11 +78,12 @@
       Loading...
     </div>
   {:else}
-    {#each $heroStore.heroes as hero}
+    {#each $heroStore.heroes as hero, index}
       <div class="max-w-sm m-5 p-10 rounded overflow-hidden shadow-lg">
         <div class="px-6 py-4">
+          <span class="text-orange-500">#{index + 1}</span>
           <div class="font-bold text-xl mb-2">
-            {hero.firstName} {hero.lastName}
+            {hero.firstName} {index} {hero.lastName}
           </div>
           <div class="text-gray-700 text-base">{hero.knownAs}</div>
           <div class="px-6 py-4">
