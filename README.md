@@ -14,13 +14,15 @@ $ npm install
 $ npm run start
 ```
 
-The React app and the fake web service will run concurrently.
+The Svelte app and the fake web service will run concurrently.
+
+---
 
 ![screenshot](./tailwind.png)
 
 ---
 
-## Tailwind installation
+## Tailwind.css installation
 
 ### Setting up Tailwind with svelte is really simple, just install Tailwind and pocstcss-cli:
 
@@ -109,7 +111,7 @@ npm run build
 
 ---
 
-# Svelte app
+# Svelte README
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
