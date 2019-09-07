@@ -1,13 +1,10 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
-
   import HeaderNav from "./shared/HeaderNav.svelte";
   import Heroes from "./heroes/Heroes.svelte";
   import Villains from "./villains/Villains.svelte";
   import EditHero from "./heroes/EditHero.svelte";
   import EditVillain from "./villains/EditVillain.svelte";
-
-  export let name;
 </script>
 
 <style>
