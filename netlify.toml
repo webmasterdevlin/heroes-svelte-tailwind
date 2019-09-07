@@ -1,0 +1,2 @@
+[build]
+  command = "run-p netlify:build:**"
