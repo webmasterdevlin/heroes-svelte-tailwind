@@ -84,7 +84,7 @@
           <div class="px-6 py-4">
             <span class="text-orange-500">#{index + 1}</span>
             <div class="font-bold text-xl mb-2">
-              {hero.firstName} {index} {hero.lastName}
+              {hero.firstName} {hero.lastName}
             </div>
             <div class="text-gray-700 text-base">{hero.knownAs}</div>
             <div class="px-6 py-4">
@@ -98,14 +98,14 @@
           <section class="card-body">
             <div class="row">
               <button
-                on:click={() => handleClickEdit(hero.id)}
+                on:click={() => handleClickEdit(hero._id)}
                 class="m-1 bg-blue-500 hover:bg-blue-700 text-white font-bold
                 py-2 px-4 rounded">
                 <Icon icon={faEdit} />
                 Edit
               </button>
               <button
-                on:click={() => handleClickDelete(hero.id)}
+                on:click={() => handleClickDelete(hero._id)}
                 class="m-1 bg-transparent hover:bg-red-500 text-red-700
                 font-semibold hover:text-white py-2 px-4 border border-red-500
                 hover:border-transparent rounded">

@@ -10,7 +10,7 @@ import {
 const initialState = {
   heroes: [],
   hero: {
-    id: "",
+    _id: "",
     firstName: "",
     lastName: "",
     house: "",
@@ -52,7 +52,10 @@ function createHeroStore() {
       update(state => (state = { ...state, isLoading: true }));
       try {
         const res = (await postHero(newHero)).data;
-        update(state => (state = { ...state, heroes: [...state.heroes, res] }));
+        update(
+          state =>
+            (state = { ...state, heroes: [...state.heroes, res.createdHero] })
+        );
       } catch (e) {
         alert(e.message);
       } finally {
@@ -67,7 +70,7 @@ function createHeroStore() {
       let previousHeroes;
       update(state => {
         previousHeroes = state.heroes;
-        const updatedHeroes = state.heroes.filter(h => h.id !== id);
+        const updatedHeroes = state.heroes.filter(h => h._id !== id);
         return (state = { ...state, heroes: updatedHeroes }); // need to return the state only
       });
       try {
@@ -83,7 +86,7 @@ function createHeroStore() {
       try {
         await putHero(updatedHero);
         update(state => {
-          const index = state.heroes.findIndex(h => h.id === updatedHero.id);
+          const index = state.heroes.findIndex(h => h._id === updatedHero._id);
           const copyOfHeroes = state.heroes;
           copyOfHeroes[index] = updatedHero;
           return (state = {

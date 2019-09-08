@@ -10,7 +10,7 @@ import {
 const initialState = {
   villains: [],
   villain: {
-    id: "",
+    _id: "",
     firstName: "",
     lastName: "",
     house: "",
@@ -53,7 +53,11 @@ function createVillainStore() {
       try {
         const res = (await postVillain(newVillain)).data;
         update(
-          state => (state = { ...state, villains: [...state.villains, res] })
+          state =>
+            (state = {
+              ...state,
+              villains: [...state.villains, res.createdVillain]
+            })
         );
       } catch (e) {
         alert(e.message);
@@ -70,7 +74,7 @@ function createVillainStore() {
       let previousVillains;
       update(state => {
         previousVillains = state.villains;
-        const updatedVillains = state.villains.filter(h => h.id !== id);
+        const updatedVillains = state.villains.filter(h => h._id !== id);
         return (state = { ...state, villains: updatedVillains }); // need to return the state only
       });
       try {
@@ -87,7 +91,7 @@ function createVillainStore() {
         await putVillain(updatedVillain);
         update(state => {
           const index = state.villains.findIndex(
-            h => h.id === updatedVillain.id
+            v => v._id === updatedVillain._id
           );
           const copyOfVillains = state.villains;
           copyOfVillains[index] = updatedVillain;

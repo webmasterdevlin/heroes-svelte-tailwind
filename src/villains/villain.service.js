@@ -14,7 +14,7 @@ export async function postVillain(villain) {
 }
 
 export async function putVillain(villain) {
-  return await http.put(`${BaseUrl.villains}${villain.id}`, villain);
+  return await http.put(`${BaseUrl.villains}${villain._id}`, villain);
 }
 
 export async function deleteVillain(id) {

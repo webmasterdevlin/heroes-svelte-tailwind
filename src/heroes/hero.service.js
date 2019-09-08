@@ -14,7 +14,8 @@ export async function postHero(hero) {
 }
 
 export async function putHero(hero) {
-  return await http.put(`${BaseUrl.heroes}${hero.id}`, hero);
+  console.log(hero);
+  return await http.put(`${BaseUrl.heroes}${hero._id}`, hero);
 }
 
 export async function deleteHero(id) {
