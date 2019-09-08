@@ -81,7 +81,7 @@ function createVillainStore() {
         await deleteVillain(id);
       } catch (e) {
         alert(e.message);
-        update(state => (state = { ...state, villains: previousVillains }));
+        update(state => (state = { ...state, villains: previousVillains })); // rolling back. =)
       }
     },
 

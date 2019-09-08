@@ -61,14 +61,16 @@
       <span class="computed">Total heroes: {$getTotalHeroes}</span>
       <span class="computed">Total villains: {$getTotalVillains}</span>
     </div>
-    <div>
+    <div class="mr-2">
       <a
         href="https://github.com/webmasterdevlin"
         class="inline-block text-sm px-4 py-2 leading-none border rounded
         text-white border-white hover:border-transparent hover:text-teal-500
         hover:bg-white mt-4 lg:mt-0">
-        <Icon icon={faLink} />
-        <span>Github</span>
+        <span class="text-teal-500">
+          <Icon icon={faLink} />
+          <span>Github</span>
+        </span>
       </a>
     </div>
 
@@ -78,8 +80,10 @@
         class="inline-block text-sm px-4 py-2 leading-none border rounded
         text-white border-white hover:border-transparent hover:text-teal-500
         hover:bg-white mt-4 lg:mt-0">
-        <Icon icon={faLink} />
-        <span>Twitter</span>
+        <span class="text-teal-500">
+          <Icon icon={faLink} />
+          <span>Twitter</span>
+        </span>
       </a>
     </div>
   </div>

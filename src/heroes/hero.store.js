@@ -63,6 +63,7 @@ function createHeroStore() {
       }
     },
 
+  /* Optimistic UI update. Updating the UI before sending the request to the web service */
     removeHero: async id => {
       const confirmation = confirm("You sure you want to delete this?");
       if (!confirmation) return;
@@ -77,7 +78,7 @@ function createHeroStore() {
         await deleteHero(id);
       } catch (e) {
         alert(e.message);
-        update(state => (state = { ...state, heroes: previousHeroes }));
+        update(state => (state = { ...state, heroes: previousHeroes })); // rolling back. =)
       }
     },
 
