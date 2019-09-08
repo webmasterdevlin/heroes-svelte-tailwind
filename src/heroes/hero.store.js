@@ -54,7 +54,7 @@ function createHeroStore() {
         const res = (await postHero(newHero)).data;
         update(
           state =>
-            (state = { ...state, heroes: [...state.heroes, res.createdHero] })
+            (state = { ...state, heroes: [...state.heroes, res] })
         );
       } catch (e) {
         alert(e.message);

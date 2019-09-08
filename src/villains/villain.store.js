@@ -56,7 +56,7 @@ function createVillainStore() {
           state =>
             (state = {
               ...state,
-              villains: [...state.villains, res.createdVillain]
+              villains: [...state.villains, res]
             })
         );
       } catch (e) {

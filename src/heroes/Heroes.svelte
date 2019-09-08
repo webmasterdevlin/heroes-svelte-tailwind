@@ -118,4 +118,24 @@
       </div>
     {/each}
   {/if}
+  {#if $heroStore.heroes.length == 0}
+    <div
+      class="text-4xl text-pink-900"
+      style="display: flex; flex-direction: column; place-items: center;
+      place-content: center">
+      <div>
+        <script
+          src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+
+        </script>
+        <lottie-player
+          src="https://assets6.lottiefiles.com/temp/lf20_Celp8h.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px;"
+          loop
+          autoplay />
+      </div>
+    </div>
+  {/if}
 </main>
