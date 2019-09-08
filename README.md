@@ -2,6 +2,7 @@
 
 ### Features
 Tailwind, store for state management, HTTP request (using axios), navigation params, 2 stores, computed values.
+Url of deployed Svelte app. [https://devlinduldulao-svelte-tailwind.netlify.com](https://devlinduldulao-svelte-tailwind.netlify.com)
 
 ### To run the project after cloning
 
