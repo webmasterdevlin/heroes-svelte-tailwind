@@ -1,4 +1,4 @@
 export const BaseUrl = {
-  heroes: "http://localhost:3000/heroes/",
-  villains: "http://localhost:3000/villains/"
+  heroes: "https://nestjs-mongodb-g2nm85c59.now.sh/heroes/",
+  villains: "https://nestjs-mongodb-g2nm85c59.now.sh/villains/"
 };
