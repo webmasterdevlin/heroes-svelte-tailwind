@@ -3,8 +3,9 @@
   import Icon from "fa-svelte";
   import { faEdit, faEraser } from "@fortawesome/free-solid-svg-icons";
   import NewItemForm from "../shared/NewItemForm.svelte";
-  import { villainStore } from "./villain.store.js";
+  import { villainStore, getTotalVillains } from "./villain.store.js";
   import { navigate } from "svelte-routing";
+  import Loader from "../shared/Loader.svelte";
 
   let isShowNewItemForm = false;
   let villainForm = {
@@ -74,7 +75,7 @@
       class="text-4xl text-pink-900"
       style="display: flex; flex-direction: column; place-items: center;
       place-content: center">
-      Loading...
+      <Loader />
     </div>
   {:else}
     {#each $villainStore.villains as villain, index}
@@ -117,5 +118,13 @@
         </div>
       </div>
     {/each}
+  {/if}
+  {#if $getTotalVillains === 0 && !$villainStore.isLoading}
+    <div
+      class="text-2xl text-pink-900"
+      style="display: flex; flex-direction: column; place-items: center;
+      place-content: center">
+      <h2>Empty list. Start adding.</h2>
+    </div>
   {/if}
 </main>

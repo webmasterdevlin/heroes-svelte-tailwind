@@ -3,8 +3,9 @@
   import Icon from "fa-svelte";
   import { faEdit, faEraser } from "@fortawesome/free-solid-svg-icons";
   import NewItemForm from "../shared/NewItemForm.svelte";
-  import { heroStore } from "./hero.store.js";
+  import { heroStore, getTotalHeroes } from "./hero.store.js";
   import { navigate } from "svelte-routing";
+  import Loader from "../shared/Loader.svelte";
 
   let isShowNewItemForm = false;
   let heroForm = {
@@ -71,12 +72,7 @@
     handleOnSubmit={onSubmit}
     handleShowNewItemForm={showNewItemForm} />
   {#if $heroStore.isLoading}
-    <div
-      class="text-4xl text-pink-900"
-      style="display: flex; flex-direction: column; place-items: center;
-      place-content: center">
-      Loading...
-    </div>
+    <Loader />
   {:else}
     {#each $heroStore.heroes as hero, index}
       <div class="max-w mx-auto flex m-4 p-6 bg-white rounded-lg shadow-xl">
@@ -117,5 +113,13 @@
         </div>
       </div>
     {/each}
+  {/if}
+  {#if $getTotalHeroes === 0 && !$heroStore.isLoading}
+    <div
+      class="text-2xl text-pink-900"
+      style="display: flex; flex-direction: column; place-items: center;
+      place-content: center">
+      <h2>Empty list. Start adding.</h2>
+    </div>
   {/if}
 </main>

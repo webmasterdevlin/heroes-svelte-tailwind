@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { villainStore } from "./villain.store.js";
   import { navigate } from "svelte-routing";
+  import Loader from "../shared/Loader.svelte";
 
   let villainForm = {
     firstName: "",
@@ -32,7 +33,7 @@
       class="text-4xl text-pink-900"
       style="display: flex; flex-direction: column; place-items: center;
       place-content: center">
-      Loading...
+      <Loader />
     </div>
   {:else}
     <main class="mx-auto px-4">
