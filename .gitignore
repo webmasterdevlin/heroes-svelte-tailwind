@@ -3,3 +3,4 @@ node_modules
 public/bundle.*
 .vscode
 .idea
+fullstack.code-workspace
