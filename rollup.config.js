@@ -17,6 +17,9 @@ import livereload from "rollup-plugin-livereload";
 	Uses terser under the hood. */
 import { terser } from "rollup-plugin-terser";
 
+/* Convert ES2015 with buble. */
+import buble from "rollup-plugin-buble";
+
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
@@ -53,6 +56,9 @@ export default {
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
     !production && livereload("public"),
+
+    // transpile to IE11 compatible ES5
+    buble(),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify

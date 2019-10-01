@@ -1,7 +1,8 @@
-import App from './App.svelte';
+import "es6-shim";
+import App from "./App.svelte";
 
 const app = new App({
-	target: document.body,
+  target: document.body
 });
 
 export default app;
